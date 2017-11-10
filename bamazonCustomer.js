@@ -54,11 +54,38 @@
 
       if (isProduct === true) {
 
-        console.log("you can buy this product");
+        inquirer.prompt({
+          name: "howMany",
+          type: "input",
+          message: "Excellent choice! How many would you like to purchase?"
+        })
+        .then(function(answer) {
+
+          var inStock = false;
+
+          for (var i = 0; i < results.length; i++) {
+           if (answer.howMany <= results[i].stock_quantity) {
+
+            inStock = true;
+
+          }
+        }
+
+        if (inStock === true) {
+
+          
+
+        } else {
+
+          console.log("Sorry, we don't have that many in stock!");
+
+        }
+
+      })
 
       } else {
 
-        console.log("Oh no, we don't carry that product! Please choose an item we have in stock.");
+        console.log("Oh no, looks like we don't have that! Please choose an item we have in stock.");
         startStore();
 
       }
