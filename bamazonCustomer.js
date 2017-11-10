@@ -42,8 +42,28 @@
     })
     .then(function(answer) {
 
+      connection.query("SELECT * FROM products", function(err, results) {
 
-      console.log("works!");
+        var isProduct = false;
+
+        for (var i = 0; i < results.length; i++) {
+         if (answer.chooseItem == results[i].item_id) {
+          isProduct = true;
+        }
+      }
+
+      if (isProduct === true) {
+
+        console.log("you can buy this product");
+
+      } else {
+
+        console.log("Oh no, we don't carry that product! Please choose an item we have in stock.");
+        startStore();
+
+      }
+
+    })
 
     });
   };
