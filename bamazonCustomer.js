@@ -42,13 +42,17 @@
     })
     .then(function(answer) {
 
+
       connection.query("SELECT * FROM products", function(err, results) {
 
         var isProduct = false;
+        var product;
 
         for (var i = 0; i < results.length; i++) {
          if (answer.chooseItem == results[i].item_id) {
           isProduct = true;
+          product = results[i];
+
         }
       }
 
@@ -73,7 +77,19 @@
 
         if (inStock === true) {
 
-          
+          connection.query("UPDATE products SET ? WHERE ?", [
+
+      {
+        stock_quantity: product.stock_quantity - answer.howMany
+      },
+      {
+        item_id: product.item_id
+      }
+            ])
+
+          var customerCost = (product.price * answer.howMany).toFixed(2);
+
+          console.log(`Thank you for shopping with us! Your total is $${ customerCost }.`);
 
         } else {
 
