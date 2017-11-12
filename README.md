@@ -10,4 +10,4 @@ Shopping using the command line!
 * You will then see all of the items currently in stock, its unique product ID and its price as provided by the MySQL database.
 * The program will also prompt you to choose a quantity that you would like to purchase of the item. 
 
-![ask for quantity](images/ask for quantity.png)
+![ask for quantity]("images/ask for quantity.png")
