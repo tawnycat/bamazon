@@ -21,16 +21,16 @@ Shopping using the command line!
 
 Before: 
 
-![mysql database before](images/sql-before.png)}
+![mysql database before](images/sql-before.png)
 
 After: 
 
-![mysql database after](images/sql-after.png)}
+![mysql database after](images/sql-after.png)
 
 * If you try to purchase an item that does exist in the database, you will receive this error:
 
-![item error](images/item-error.png)}
+![item error](images/item-error.png)
 
 * If you try to purchase a larger quantity of an item than exists in the store, you will receive this error:
 
-![quantity error](images/quantity-error.png)}
+![quantity error](images/quantity-error.png)
