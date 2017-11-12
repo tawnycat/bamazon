@@ -67,13 +67,11 @@
 
           var inStock = false;
 
-          for (var i = 0; i < results.length; i++) {
-           if (answer.howMany <= results[i].stock_quantity) {
+           if (answer.howMany <= product.stock_quantity) {
 
             inStock = true;
 
           }
-        }
 
         if (inStock === true) {
 
